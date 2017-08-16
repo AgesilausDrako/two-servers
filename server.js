@@ -3,8 +3,18 @@ var http = require("http");
 var PORTONE = 8080;
 var PORTTWO = 7500;
 
+var goodArray = ["You are crushing it!",
+                    "Awesome!"];
+
+var badArray = ["You suck!",
+                "You are terrible!"]
+
+var goodComment = goodArray[Math.floor(Math.random() * goodArray.length)];
+
+var badComment = badArray[Math.floor(Math.random() * badArray.length)];
+
 function handleGoodRequest(request, response) {
-    response.end("You are awesome!");
+    response.end(goodComment);
 }
 var serverOne = http.createServer(handleGoodRequest);
 
@@ -13,7 +23,7 @@ serverOne.listen(PORTONE, function() {
 });
 
 function handleBadRequest(request, response) {
-    response.end("You are terrible!");
+    response.end(badComment);
 }
 
 var serverTwo = http.createServer(handleBadRequest);
