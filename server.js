@@ -1,13 +1,23 @@
 var http = require("http");
 
-var PORT1 = 7000;
-var PORT2 = 7500;
+var PORTONE = 8080;
+var PORTTWO = 7500;
 
 function handleGoodRequest(request, response) {
     response.end("You are awesome!");
 }
-var server = http.createServer(handleGoodRequest);
+var serverOne = http.createServer(handleGoodRequest);
 
-server.listen(PORT1, function() {
-    console.log("Server on http://localhost:%s", PORT1);
+serverOne.listen(PORTONE, function() {
+    console.log("Server on http://localhost:%s", PORTONE);
 });
+
+function handleBadRequest(request, response) {
+    response.end("You are terrible!");
+}
+
+var serverTwo = http.createServer(handleBadRequest);
+
+serverTwo.listen(PORTTWO, function() {
+    console.log("Server on http://localhost:%s", PORTTWO);
+}); 
