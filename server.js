@@ -4,10 +4,11 @@ var PORTONE = 8080;
 var PORTTWO = 7500;
 
 var goodArray = ["You are crushing it!",
-                    "Awesome!"];
+                    "Awesome!", "Excellent!"];
 
 var badArray = ["You suck!",
-                "You are terrible!"]
+                "You are terrible!",
+            "Come on, man!"]
 
 var goodComment = goodArray[Math.floor(Math.random() * goodArray.length)];
 
